@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "controls-playground"
+version = "0.1.0"
+description = "Humanoid standup from arbitrary pose: brax PPO + mujoco_playground."
+requires-python = ">=3.11"
+dependencies = [
+    "brax>=0.14.2",
+    "flax>=0.11.2",
+    "imageio[ffmpeg]>=2.30",
+    "jax>=0.6.2",
+    "jaxlib>=0.6.2",
+    "mujoco>=3.6.0",
+    "mujoco-mjx>=3.6.0",
+    "numpy",
+    "playground>=0.2.0",
+    "pyyaml>=6.0",
+    "wandb",
+    "warp-lang>=1.11",
+]
+
+[project.optional-dependencies]
+modal = ["modal"]
+dev   = ["pytest"]
+
+[project.scripts]
+cp-train  = "controls_playground.scripts.train:main"
+cp-play   = "controls_playground.scripts.viz:play_main"
+cp-render = "controls_playground.scripts.viz:render_main"
+cp-clips  = "controls_playground.scripts.viz:clips_main"
+cp-analysis  = "controls_playground.scripts.analysis:main"
+cp-landscape = "controls_playground.scripts.landscape:main"
+cp-probe  = "controls_playground.scripts.probe:main"
+cp-mpc    = "controls_playground.scripts.mpc:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/controls_playground"]

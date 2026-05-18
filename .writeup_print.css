@@ -1,0 +1,113 @@
+@page {
+  size: Letter;
+  margin: 0.5in 0.6in;
+}
+
+html { font-size: 9pt; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.28;
+  color: #1a1a1a;
+  max-width: none;
+}
+
+p { margin: 0.25em 0; }
+ul, ol { margin: 0.25em 0; padding-left: 1.4em; }
+li { margin: 0.05em 0; }
+
+h1 {
+  font-size: 1.65em;
+  margin: 0 0 0.4em 0;
+  padding-bottom: 0.15em;
+  border-bottom: 2px solid #444;
+}
+
+h2 {
+  font-size: 1.22em;
+  margin-top: 0.9em;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid #bbb;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2:first-of-type { margin-top: 0.4em; }
+
+h3 {
+  font-size: 1.02em;
+  margin-top: 0.7em;
+  margin-bottom: 0.2em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+p, li { orphans: 3; widows: 3; }
+
+table {
+  border-collapse: collapse;
+  margin: 0.4em 0;
+  font-size: 0.9em;
+}
+
+th, td {
+  border: 1px solid #999;
+  padding: 3px 7px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: #eee; font-weight: 600; }
+
+img {
+  max-width: 78%;
+  height: auto;
+  display: block;
+  margin: 0.4em auto;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+figure { page-break-inside: avoid; break-inside: avoid; }
+
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f3f3f3;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 7px 9px;
+  overflow-x: auto;
+  font-size: 0.84em;
+  line-height: 1.32;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+pre code { background: none; padding: 0; }
+
+/* The doc uses --- as section dividers, which become <hr>; suppress so the
+   visual structure is carried by the h2 borders alone. */
+hr { display: none; }
+
+blockquote {
+  border-left: 3px solid #bbb;
+  margin-left: 0;
+  padding-left: 0.8em;
+  color: #555;
+}
+
+.MathJax { font-size: 0.95em !important; }
+
+.page-break {
+  page-break-after: always;
+  break-after: page;
+  height: 0;
+}

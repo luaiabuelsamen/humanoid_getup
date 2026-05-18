@@ -1,0 +1,25 @@
+model_path: assets/humanoid/humanoid.xml
+keyframe:   supine
+
+planner:
+  horizon:        60     # control steps lookahead
+  num_samples:    256
+  noise_sigma:    0.6
+  noise_lscale:   6      # gaussian kernel for colored noise
+  temperature:    5.0    # MPPI lambda
+  total_steps:    300
+  substeps:       5      # mj_step calls per control step
+  action_bounds:  [-1.0, 1.0]
+
+cost:
+  torso_z_weight:    8.0
+  head_z_weight:     4.0
+  upright_weight:    4.0
+  feet_down_weight:  6.0
+  com_feet_weight:   5.0
+  ctrl_weight:       0.01
+  vel_weight:        0.005
+  vel_late_weight:   0.20
+  hold_start_frac:   0.6
+  torso_z_target:    1.28
+  head_z_target:     1.50

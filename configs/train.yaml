@@ -1,0 +1,24 @@
+network:
+  policy_hidden: [512, 256, 128]
+  value_hidden:  [512, 256, 128]
+
+ppo:
+  # PPO defaults inherited from mujoco_playground's HumanoidStand config
+  # except for the three keys overridden below.
+  num_timesteps:  200000000
+  num_envs:       2048
+  episode_length: 1000
+
+seed: 0
+
+wandb:
+  enabled: true
+  project: controls-playground
+
+modal:
+  app_name:        controls-playground-ppo
+  gpu:             H100
+  timeout_hours:   6
+  volume_name:     controls-ckpts
+  wandb_secret:    wandb-secret
+  remote_out_root: /root/work/humanoid_getup
